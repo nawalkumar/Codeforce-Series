@@ -17,17 +17,18 @@ int main()
         sort(q.begin(),q.end());
         sort(r.begin(),r.end());
 
-        int i=0,j=0;
+        int i=0,j=n-1;
         int ans=0;
-        while(i<n && j<n){
+        while(i<n && j>=0){
             if( ( q[i] * (r[j]+1) + r[j] )<=k){
                 ans++;
-                i++; j++;
+                i++; j--;
             }
             else{
-                j++;
+                j--;
             }
         }
         cout<<ans<<"\n";
     }
+
 }
